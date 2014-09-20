@@ -50,6 +50,8 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
     }
 
     public function updateFile(Request $request, CRUDEntity $entity, $entityName, $field) {
+        // We could first delete the old file, but for now, we are defensive and don't delete ever.
+        $this->createFile($request, $entity, $entityName, $field);
     }
 
     public function deleteFile(CRUDEntity $entity, $entityName, $field) {
