@@ -55,6 +55,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
     }
 
     public function deleteFile(CRUDEntity $entity, $entityName, $field) {
+        // For now, we are defensive and don't delete ever.
     }
 
     public function renderFile(CRUDEntity $entity, $entityName, $field) {
