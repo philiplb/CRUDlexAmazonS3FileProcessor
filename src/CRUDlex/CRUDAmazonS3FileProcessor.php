@@ -229,7 +229,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
     }
 
     protected function getKey(CRUDEntity $entity, $entityName, $field) {
-        return $entityName.'/'.$entity->get('id').'/'.$field;
+        return $entity->getDefinition()->getFilePath($field).'/'.$entityName.'/'.$entity->get('id').'/'.$field;
     }
 
     public function __construct($region, $bucket, $accessKey, $secretAccessKey) {
