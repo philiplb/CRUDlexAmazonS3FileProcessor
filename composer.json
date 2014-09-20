@@ -1,0 +1,22 @@
+{
+    "name": "philiplb/crudlexaddons",
+    "type": "library",
+    "description": "This is a library with addons for CRUDlex including file support for Amazon S3.",
+    "keywords": ["silex", "crud", "admin generator", "Amazon S3", "S3"],
+    "homepage": "https://github.com/philiplb/CRUDlexAddons",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Philip Lehmann-Böhm",
+            "email": "philip@philiplb.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "philiplb/crudlex": ">=0.9.4",
+        "aws/aws-sdk-php": ">=2.6.16"
+    },
+    "autoload": {
+        "psr-0": { "CRUDlex": "src" }
+    }
+}
