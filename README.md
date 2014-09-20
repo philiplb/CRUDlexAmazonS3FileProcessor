@@ -9,3 +9,21 @@ Currently including:
 
 - Amazon S3 FileProcessor: it is in the addon package as it pulls in some heavy
 dependencies and is hard to unit test
+
+## Package
+
+### Stable
+
+Soon.
+
+### Bleeding Edge
+
+```json
+"require": {
+    "philiplb/crudlexaddons": "dev-master"
+}
+```
+
+[![Total Downloads](https://poser.pugx.org/philiplb/crudlexaddons/downloads.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
+[![Latest Stable Version](https://poser.pugx.org/philiplb/crudlexaddons/v/stable.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
+[![Latest Unstable Version](https://poser.pugx.org/philiplb/crudlexaddons/v/unstable.svg)](https://packagist.org/packages/philiplb/crudlexaddons) [![License](https://poser.pugx.org/philiplb/crudlexaddons/license.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
