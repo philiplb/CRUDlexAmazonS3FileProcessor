@@ -20,8 +20,6 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
 
     protected $client;
 
-    protected $region;
-
     protected $bucket;
 
     protected function getMimeType($file) {
@@ -232,12 +230,11 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         return $entity->getDefinition()->getFilePath($field).'/'.$entityName.'/'.$entity->get('id').'/'.$field;
     }
 
-    public function __construct($region, $bucket, $accessKey, $secretAccessKey) {
+    public function __construct($bucket, $accessKey, $secretAccessKey) {
         $this->client = S3Client::factory(array(
             'key' => $accessKey,
             'secret' => $secretAccessKey
         ));
-        $this->region = $region;
         $this->bucket = $bucket;
     }
 
