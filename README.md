@@ -10,6 +10,28 @@ Currently including:
 - Amazon S3 FileProcessor: it is in the addon package as it pulls in some heavy
 dependencies and is hard to unit test
 
+## How To: Amazon S3 FileProcessor
+
+First, create an instance of the Amazon S3 FileProcessor:
+
+```php
+$fileProcessor = new CRUDlex\CRUDAmazonS3FileProcessor(
+    'yourBucket',
+    'yourAccessKey',
+    'yourSecretAccessKey'
+);
+```
+
+And then hand it in when registering the CRUDlexServiceProvider:
+
+```php
+$app->register(new CRUDlex\CRUDServiceProvider(), array(
+    'crud.file' => 'yourCrud.yml',
+    'crud.datafactory' => $dataFactory,
+    'crud.fileprocessor' => $fileProcessor
+));
+```
+
 ## Package
 
 ### Stable
