@@ -26,7 +26,7 @@ And then hand it in when registering the CRUDlexServiceProvider:
 
 ```php
 $app->register(new CRUDlex\CRUDServiceProvider(), array(
-    'crud.file' => 'yourCrud.yml',
+    'crud.file' => __DIR__ . '<yourCrud.yml>',
     'crud.datafactory' => $dataFactory,
     'crud.fileprocessor' => $fileProcessor
 ));
