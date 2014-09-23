@@ -273,6 +273,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
             'Key'    => $key
         ));
         $result['Body']->rewind();
+        header('Content-length: '.$result['ContentLength']);
 
         while ($data = $result['Body']->read(1024)) {
             echo $data;
