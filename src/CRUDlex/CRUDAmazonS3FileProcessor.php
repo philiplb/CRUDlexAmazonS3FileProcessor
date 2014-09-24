@@ -277,6 +277,8 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
 
         while ($data = $result['Body']->read(1024)) {
             echo $data;
+            ob_flush();
+            flush();
         }
     }
 }
