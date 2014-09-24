@@ -262,7 +262,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
     public function renderFile(CRUDEntity $entity, $entityName, $field) {
 
         $fileName = $entity->get($field);
-        $mimetype = $this->getMimeType($fileName);
+        $mimeType = $this->getMimeType($fileName);
         $key = $this->getKey($entity, $entityName, $field).'/'.$fileName;
 
         header('Content-Type: '.$mimeType);
@@ -275,6 +275,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         $result['Body']->rewind();
         header('Content-length: '.$result['ContentLength']);
 
+        ob_start();
         while ($data = $result['Body']->read(1024)) {
             echo $data;
             ob_flush();
