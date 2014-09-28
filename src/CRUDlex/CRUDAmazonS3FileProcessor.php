@@ -14,6 +14,8 @@ namespace CRUDlex;
 use CRUDlex\CRUDFileProcessorInterface;
 use CRUDlex\CRUDEntity;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Aws\S3\S3Client;
 
 class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
@@ -264,22 +266,25 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         $fileName = $entity->get($field);
         $mimeType = $this->getMimeType($fileName);
         $key = $this->getKey($entity, $entityName, $field).'/'.$fileName;
-
-        header('Content-Type: '.$mimeType);
-        header('Content-Disposition: attachment; filename="'.$fileName.'"');
+        $response = new Response('');
 
         $result = $this->client->getObject(array(
             'Bucket' => $this->bucket,
             'Key'    => $key
         ));
         $result['Body']->rewind();
-        header('Content-length: '.$result['ContentLength']);
 
-        ob_start();
-        while ($data = $result['Body']->read(1024)) {
-            echo $data;
-            ob_flush();
-            flush();
-        }
+        $response = new StreamedResponse(function () use ($result) {
+            while ($data = $result['Body']->read(1024)) {
+                echo $data;
+                flush();
+            }
+        }, 200, array(
+            'Content-length' => $result['ContentLength'],
+            'Content-Type' => $mimeType,
+            'Content-Disposition' => 'attachment; filename="'.$fileName.'"'
+        ));
+
+        return $response;
     }
 }
