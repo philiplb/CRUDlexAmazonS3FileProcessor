@@ -266,7 +266,6 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         $fileName = $entity->get($field);
         $mimeType = $this->getMimeType($fileName);
         $key = $this->getKey($entity, $entityName, $field).'/'.$fileName;
-        $response = new Response('');
 
         $result = $this->client->getObject(array(
             'Bucket' => $this->bucket,
@@ -284,6 +283,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
             'Content-Type' => $mimeType,
             'Content-Disposition' => 'attachment; filename="'.$fileName.'"'
         ));
+        $response->send();
 
         return $response;
     }
