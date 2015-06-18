@@ -223,7 +223,8 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
             "png"       => "image/png",
         );
 
-        $extension = end(explode('.', $file));
+        $exploded = explode('.', $file);
+        $extension = end($exploded);
         $extension = strtolower($extension);
         return $mimeTypes[$extension]; // return the array value
     }
