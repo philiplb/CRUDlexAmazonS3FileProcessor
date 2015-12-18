@@ -226,7 +226,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         $exploded = explode('.', $file);
         $extension = end($exploded);
         $extension = strtolower($extension);
-        return $mimeTypes[$extension]; // return the array value
+        return isset($mimeTypes[$extension]) ? $mimeTypes[$extension] : 'application/octet-stream';
     }
 
     protected function getKey(CRUDEntity $entity, $entityName, $field) {
