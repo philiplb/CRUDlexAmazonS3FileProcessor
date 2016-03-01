@@ -1,5 +1,7 @@
 CRUDlex Addons Changelog
 ========================
 
-## 1.0.0
-Released: Upcoming
+## 0.9.9
+Released: 01.03.2016
+
+First release.
