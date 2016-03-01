@@ -15,17 +15,17 @@ dependencies and is hard to unit test
 First, create an instance of the Amazon S3 FileProcessor:
 
 ```php
-$fileProcessor = new CRUDlex\CRUDAmazonS3FileProcessor(
+$fileProcessor = new CRUDlex\AmazonS3FileProcessor(
     'yourBucket',
     'yourAccessKey',
     'yourSecretAccessKey'
 );
 ```
 
-And then hand it in when registering the CRUDlexServiceProvider:
+And then hand it in when registering the CRUDlex ServiceProvider:
 
 ```php
-$app->register(new CRUDlex\CRUDServiceProvider(), array(
+$app->register(new CRUDlex\ServiceProvider(), array(
     'crud.file' => __DIR__ . '<yourCrud.yml>',
     'crud.datafactory' => $dataFactory,
     'crud.fileprocessor' => $fileProcessor
@@ -36,13 +36,17 @@ $app->register(new CRUDlex\CRUDServiceProvider(), array(
 
 ### Stable
 
-Soon.
+```json
+"require": {
+    "philiplb/crudlexaddons": "0.9.9"
+}
+```
 
 ### Bleeding Edge
 
 ```json
 "require": {
-    "philiplb/crudlexaddons": "dev-master"
+    "philiplb/crudlexaddons": "0.9.x-dev"
 }
 ```
 

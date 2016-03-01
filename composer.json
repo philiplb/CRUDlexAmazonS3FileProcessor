@@ -13,10 +13,15 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "philiplb/crudlex": "0.9.4 - 0.9.9",
+        "philiplb/crudlex": "0.9.x-dev",
         "aws/aws-sdk-php": "~2.6"
     },
     "autoload": {
         "psr-0": { "CRUDlex": "src" }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.9.x-dev"
+        }
     }
 }

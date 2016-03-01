@@ -11,14 +11,14 @@
 
 namespace CRUDlex;
 
-use CRUDlex\CRUDFileProcessorInterface;
-use CRUDlex\CRUDEntity;
+use CRUDlex\FileProcessorInterface;
+use CRUDlex\Entity;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Aws\S3\S3Client;
 
-class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
+class AmazonS3FileProcessor implements FileProcessorInterface {
 
     protected $client;
 
@@ -229,7 +229,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         return isset($mimeTypes[$extension]) ? $mimeTypes[$extension] : 'application/octet-stream';
     }
 
-    protected function getKey(CRUDEntity $entity, $entityName, $field) {
+    protected function getKey(Entity $entity, $entityName, $field) {
         return $entity->getDefinition()->getFilePath($field).'/'.$entityName.'/'.$entity->get('id').'/'.$field;
     }
 
@@ -241,7 +241,7 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         $this->bucket = $bucket;
     }
 
-    public function createFile(Request $request, CRUDEntity $entity, $entityName, $field) {
+    public function createFile(Request $request, Entity $entity, $entityName, $field) {
         $file = $request->files->get($field);
         if ($file) {
             $key = $this->getKey($entity, $entityName, $field).'/'.$file->getClientOriginalName();
@@ -253,16 +253,16 @@ class CRUDAmazonS3FileProcessor implements CRUDFileProcessorInterface {
         }
     }
 
-    public function updateFile(Request $request, CRUDEntity $entity, $entityName, $field) {
+    public function updateFile(Request $request, Entity $entity, $entityName, $field) {
         // We could first delete the old file, but for now, we are defensive and don't delete ever.
         $this->createFile($request, $entity, $entityName, $field);
     }
 
-    public function deleteFile(CRUDEntity $entity, $entityName, $field) {
+    public function deleteFile(Entity $entity, $entityName, $field) {
         // For now, we are defensive and don't delete ever.
     }
 
-    public function renderFile(CRUDEntity $entity, $entityName, $field) {
+    public function renderFile(Entity $entity, $entityName, $field) {
 
         $fileName = $entity->get($field);
         $mimeType = $this->getMimeType($fileName);
