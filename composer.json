@@ -1,7 +1,7 @@
 {
-    "name": "philiplb/crudlexaddons",
+    "name": "philiplb/crudlexamazons3fileprocessor",
     "type": "library",
-    "description": "This is a library with addons for CRUDlex including file support for Amazon S3.",
+    "description": "This is a FileProcessor for philiplb/crudlex handling the uploaded files via Amazon S3",
     "keywords": ["silex", "crud", "admin generator", "Amazon S3", "S3"],
     "homepage": "https://github.com/philiplb/CRUDlexAddons",
     "license": "MIT",

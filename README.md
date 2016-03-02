@@ -1,14 +1,11 @@
-CRUDlex Addons
-==============
+CRUDlex Amazon S3 FileProcessor
+===============================
 
-This is a library with addons for
-[CRUDlex](https://github.com/philiplb/CRUDlex) including file support for Amazon
-S3.
+This is a FileProcessor for [CRUDlex](https://github.com/philiplb/CRUDlex)
+handling the uploaded files via Amazon S3.
 
-Currently including:
-
-- Amazon S3 FileProcessor: it is in the addon package as it pulls in some heavy
-dependencies and is hard to unit test
+Its tags follow the versioning of CRUDlex. So the version 0.9.9 will work with
+CRUDlex 0.9.9 etc.. The master branch works against the master of CRUDlex.
 
 ## How To: Amazon S3 FileProcessor
 
@@ -38,7 +35,7 @@ $app->register(new CRUDlex\ServiceProvider(), array(
 
 ```json
 "require": {
-    "philiplb/crudlexaddons": "0.9.9"
+    "philiplb/crudlexamazons3fileprocessor": "0.9.9"
 }
 ```
 
@@ -46,7 +43,7 @@ $app->register(new CRUDlex\ServiceProvider(), array(
 
 ```json
 "require": {
-    "philiplb/crudlexaddons": "0.9.x-dev"
+    "philiplb/crudlexamazons3fileprocessor": "0.9.x-dev"
 }
 ```
 

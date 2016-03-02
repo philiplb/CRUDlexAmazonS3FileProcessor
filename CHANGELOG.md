@@ -1,5 +1,5 @@
-CRUDlex Addons Changelog
-========================
+CRUDlex Amazon S3 FileProcessor Changelog
+=========================================
 
 ## 0.9.10
 Released: Upcoming
