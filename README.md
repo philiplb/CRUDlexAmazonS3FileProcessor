@@ -47,6 +47,6 @@ $app->register(new CRUDlex\ServiceProvider(), array(
 }
 ```
 
-[![Total Downloads](https://poser.pugx.org/philiplb/crudlexaddons/downloads.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
-[![Latest Stable Version](https://poser.pugx.org/philiplb/crudlexaddons/v/stable.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
-[![Latest Unstable Version](https://poser.pugx.org/philiplb/crudlexaddons/v/unstable.svg)](https://packagist.org/packages/philiplb/crudlexaddons) [![License](https://poser.pugx.org/philiplb/crudlexaddons/license.svg)](https://packagist.org/packages/philiplb/crudlexaddons)
+[![Total Downloads](https://poser.pugx.org/philiplb/crudlexamazons3fileprocessor/downloads.svg)](https://packagist.org/packages/philiplb/crudlexamazons3fileprocessor)
+[![Latest Stable Version](https://poser.pugx.org/philiplb/crudlexamazons3fileprocessor/v/stable.svg)](https://packagist.org/packages/philiplb/crudlexamazons3fileprocessor)
+[![Latest Unstable Version](https://poser.pugx.org/philiplb/crudlexamazons3fileprocessor/v/unstable.svg)](https://packagist.org/packages/philiplb/crudlexamazons3fileprocessor) [![License](https://poser.pugx.org/philiplb/crudlexamazons3fileprocessor/license.svg)](https://packagist.org/packages/philiplb/crudlexamazons3fileprocessor)
