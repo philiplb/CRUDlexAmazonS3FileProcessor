@@ -3,6 +3,7 @@ CRUDlex Amazon S3 FileProcessor Changelog
 
 ## 0.9.11
 Released: Upcoming
+- Switched to the array shorthand
 
 ## 0.9.10
 Released: 2016-07-19

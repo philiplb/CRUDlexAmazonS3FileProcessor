@@ -30,7 +30,7 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
         // http://stackoverflow.com/questions/134833/how-do-i-find-the-mime-type-of-a-file-with-php
 
         // MIME types array
-        $mimeTypes = array(
+        $mimeTypes = [
             "323"       => "text/h323",
             "acx"       => "application/internet-property-stream",
             "ai"        => "application/postscript",
@@ -221,7 +221,7 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
 
             // Added
             "png"       => "image/png",
-        );
+        ];
 
         $exploded = explode('.', $file);
         $extension = end($exploded);
@@ -234,10 +234,10 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
     }
 
     public function __construct($bucket, $accessKey, $secretAccessKey) {
-        $this->client = S3Client::factory(array(
+        $this->client = S3Client::factory([
             'key' => $accessKey,
             'secret' => $secretAccessKey
-        ));
+        ]);
         $this->bucket = $bucket;
     }
 
@@ -245,11 +245,11 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
         $file = $request->files->get($field);
         if ($file) {
             $key = $this->getKey($entity, $entityName, $field).'/'.$file->getClientOriginalName();
-            $result = $this->client->putObject(array(
+            $result = $this->client->putObject([
                 'Bucket' => $this->bucket,
                 'Key' => $key,
                 'SourceFile' => $file->getPathname()
-            ));
+            ]);
         }
     }
 
@@ -268,10 +268,10 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
         $mimeType = $this->getMimeType($fileName);
         $key = $this->getKey($entity, $entityName, $field).'/'.$fileName;
 
-        $result = $this->client->getObject(array(
+        $result = $this->client->getObject([
             'Bucket' => $this->bucket,
             'Key'    => $key
-        ));
+        ]);
         $result['Body']->rewind();
 
         $response = new StreamedResponse(function () use ($result) {
@@ -279,11 +279,11 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
                 echo $data;
                 flush();
             }
-        }, 200, array(
+        }, 200, [
             'Content-length' => $result['ContentLength'],
             'Content-Type' => $mimeType,
             'Content-Disposition' => 'attachment; filename="'.$fileName.'"'
-        ));
+        ]);
         $response->send();
 
         return $response;
