@@ -6,6 +6,7 @@ Released: Upcoming
 - Adjusted to the new CRUDlex 0.10.0 API
 - Switched to the array shorthand
 - Attention: The minimum PHP version is now 5.5
+- Attention: Switched from PSR-0 to PSR-4
 
 ## 0.9.10
 Released: 2016-07-19
