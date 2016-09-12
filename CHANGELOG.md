@@ -4,6 +4,7 @@ CRUDlex Amazon S3 FileProcessor Changelog
 ## 0.10.0
 Released: Upcoming
 - Adjusted to the new CRUDlex 0.10.0 API
+- Using the CRUDlex mimetype detection instead of an own
 - Switched to the array shorthand
 - Attention: The minimum PHP version is now 5.5
 - Attention: Switched from PSR-0 to PSR-4
