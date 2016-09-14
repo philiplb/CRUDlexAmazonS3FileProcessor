@@ -45,7 +45,7 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
      * the key
      */
     protected function getKey(Entity $entity, $entityName, $field) {
-        return $entity->getDefinition()->getFilePath($field).'/'.$entityName.'/'.$entity->get('id').'/'.$field;
+        return $entity->getDefinition()->getPath($field).'/'.$entityName.'/'.$entity->get('id').'/'.$field;
     }
 
     /**
