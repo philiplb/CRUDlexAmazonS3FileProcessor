@@ -118,6 +118,7 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
                 flush();
             }
         }, 200, [
+            'Cache-Control' => 'public, max-age=86400',
             'Content-length' => $result['ContentLength'],
             'Content-Type' => $mimeType,
             'Content-Disposition' => 'attachment; filename="'.$fileName.'"'

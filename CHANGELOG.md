@@ -9,6 +9,7 @@ Released: Upcoming
 - Switched to the array shorthand
 - Attention: The minimum PHP version is now 5.5
 - Attention: Switched from PSR-0 to PSR-4
+- Added a Cache-Control header, thx JMF
 
 ## 0.9.10
 Released: 2016-07-19
