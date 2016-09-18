@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": ">=5.5",
-        "philiplb/crudlex": "0.10.x-dev",
+        "philiplb/crudlex": "0.10.0",
         "aws/aws-sdk-php": "~2.6"
     },
     "autoload": {
@@ -21,7 +21,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.10.x-dev"
+            "dev-master": "0.11.x-dev"
         }
     }
 }

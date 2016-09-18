@@ -1,8 +1,11 @@
 CRUDlex Amazon S3 FileProcessor Changelog
 =========================================
 
-## 0.10.0
+## 0.11.0
 Released: Upcoming
+
+## 0.10.0
+Released: 2016-09-18
 - Adjusted to the new CRUDlex 0.10.0 API
 - Using the CRUDlex mimetype detection instead of an own
 - Added inline documentation
