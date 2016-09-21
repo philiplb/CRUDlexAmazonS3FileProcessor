@@ -13,6 +13,7 @@ First, create an instance of the Amazon S3 FileProcessor:
 
 ```php
 $fileProcessor = new CRUDlex\AmazonS3FileProcessor(
+    'yourRegion',
     'yourBucket',
     'yourAccessKey',
     'yourSecretAccessKey'
