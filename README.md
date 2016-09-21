@@ -4,6 +4,10 @@ CRUDlex Amazon S3 FileProcessor
 This is a FileProcessor for [CRUDlex](https://github.com/philiplb/CRUDlex)
 handling the uploaded files via Amazon S3.
 
+The CRUDlex Amazon S3 FileProcessor uses [SemVer](http://semver.org/) for
+versioning. Currently, the API changes quickly due to be < 1.0.0, so take
+care about notes in the changelog when upgrading.
+
 ## How To: Amazon S3 FileProcessor
 
 First, create an instance of the Amazon S3 FileProcessor:
