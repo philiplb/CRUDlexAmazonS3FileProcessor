@@ -63,8 +63,11 @@ class AmazonS3FileProcessor implements FileProcessorInterface {
     public function __construct($region, $bucket, $accessKey, $secretAccessKey) {
         $this->client = S3Client::factory([
             'region' => $region,
-            'key' => $accessKey,
-            'secret' => $secretAccessKey
+            'version' => '2006-03-01',
+            'credentials' => [
+                'key' => $accessKey,
+                'secret' => $secretAccessKey
+            ],
         ]);
         $this->bucket = $bucket;
     }

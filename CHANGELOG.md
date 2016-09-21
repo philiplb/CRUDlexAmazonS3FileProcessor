@@ -2,7 +2,8 @@ CRUDlex Amazon S3 FileProcessor Changelog
 =========================================
 
 ## 0.11.0
-Released: Upcoming
+Released: 2016-09-21
+- Updated the aws/aws-sdk-php to ~3.19 and so requiring the region as first parameter in the constructor
 - Relaxed a bit the required CRUDlex version
 
 ## 0.10.0
