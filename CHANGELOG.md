@@ -3,6 +3,7 @@ CRUDlex Amazon S3 FileProcessor Changelog
 
 ## 0.11.0
 Released: Upcoming
+- Relaxed a bit the required CRUDlex version
 
 ## 0.10.0
 Released: 2016-09-18
