@@ -41,7 +41,7 @@ $app->register(new CRUDlex\ServiceProvider(), array(
 
 ```json
 "require": {
-    "philiplb/crudlexamazons3fileprocessor": "0.10.0"
+    "philiplb/crudlexamazons3fileprocessor": "0.11.0"
 }
 ```
 
@@ -49,6 +49,6 @@ $app->register(new CRUDlex\ServiceProvider(), array(
 
 ```json
 "require": {
-    "philiplb/crudlexamazons3fileprocessor": "0.11.x-dev"
+    "philiplb/crudlexamazons3fileprocessor": "0.12.x-dev"
 }
 ```
