@@ -1,6 +1,10 @@
 CRUDlex Amazon S3 FileProcessor Changelog
 =========================================
 
+# 1.0.0
+Released: 2017-06-29
+- As CRUDlex uses Flysystem now, the maximum CRUDlex version is now 0.11.0
+
 # 0.12.0
 Released: 2017-03-26
 - Relaxed a bit the required CRUDlex version
